@@ -1,13 +1,11 @@
 export default function Home() {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-white p-6">
-      <div className="flex max-w-xl flex-col items-center gap-4 text-center">
-        <h1 className="text-2xl font-semibold text-gray-900">mbira Authoring Tool</h1>
-        <p className="text-sm text-gray-600">
-          Workspace bootstrap complete. Continue with Stage 1 to apply the Archive Slate design
-          system.
-        </p>
-      </div>
-    </main>
+    <section className="rounded-lg border border-borderDivider bg-bgSidebar px-6 py-5 shadow-sm">
+      <h2 className="text-header font-medium text-textPrimary">Stage 1 Foundations Ready</h2>
+      <p className="mt-2 max-w-prose text-body text-textSecondary">
+        Design tokens, typography, and the global layout shell are in place. Continue with Stage 2
+        to wire the application store, Supabase clients, and session helpers.
+      </p>
+    </section>
   );
 }

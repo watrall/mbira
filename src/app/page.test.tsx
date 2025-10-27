@@ -4,10 +4,14 @@ import { describe, expect, it } from "vitest";
 import Home from "./page";
 
 describe("Home", () => {
-  it("renders the stage bootstrap message", () => {
+  it("renders the stage 1 guidance copy", () => {
     render(<Home />);
 
-    expect(screen.getByRole("heading", { name: /mbira authoring tool/i })).toBeInTheDocument();
-    expect(screen.getByText(/workspace bootstrap complete/i)).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: /stage 1 foundations ready/i, level: 2 }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/design tokens, typography, and the global layout shell/i),
+    ).toBeInTheDocument();
   });
 });

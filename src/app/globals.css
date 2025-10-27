@@ -3,27 +3,57 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  color-scheme: light;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+  html {
+    @apply bg-bgContent;
+  }
+
+  body {
+    @apply min-h-screen bg-bgContent text-body text-textPrimary antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-textPrimary;
+  }
+
+  h1 {
+    @apply text-page-title;
+  }
+
+  h2 {
+    @apply text-header;
+  }
+
+  p {
+    @apply text-body;
+  }
+
+  a {
+    @apply text-accent underline-offset-4;
+  }
+
+  a:hover {
+    @apply opacity-80;
+  }
+
+  button,
+  [role="button"] {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bgContent;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb)))
-    rgb(var(--background-start-rgb));
+.skip-link {
+  @apply absolute left-4 top-4 z-50 inline-flex -translate-y-40 rounded-md bg-accent px-4 py-2 text-sm font-medium text-white shadow transition-transform focus-visible:translate-y-0;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+#toast-root {
+  @apply pointer-events-none;
 }

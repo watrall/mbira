@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test";
 
-test("renders Next.js starter content", async ({ page }) => {
+test("renders Stage 1 layout shell", async ({ page }) => {
   await page.goto("/");
 
-  await expect(page.getByRole("heading", { name: /mbira authoring tool/i })).toBeVisible();
+  await expect(page.getByRole("heading", { name: /workspace overview/i, level: 1 })).toBeVisible();
 });
