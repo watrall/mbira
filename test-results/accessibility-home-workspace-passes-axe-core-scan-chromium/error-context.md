@@ -1,0 +1,179 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - complementary "Primary navigation" [ref=e3]:
+      - link "mbira" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img "mbira" [ref=e5]
+      - generic [ref=e6]:
+        - generic [ref=e7]:
+          - generic [ref=e8]:
+            - paragraph [ref=e9]: Instance
+            - paragraph [ref=e10]: Manage global resources, membership, and moderation.
+          - list [ref=e11]:
+            - listitem [ref=e12]:
+              - link "Overview" [ref=e13] [cursor=pointer]:
+                - /url: /instance
+                - img [ref=e14]
+                - generic [ref=e17]: Overview
+                - img [ref=e18]
+            - listitem [ref=e21]:
+              - link "My Projects" [ref=e22] [cursor=pointer]:
+                - /url: /instance/projects
+                - img [ref=e23]
+                - generic [ref=e25]: My Projects
+                - img [ref=e26]
+            - listitem [ref=e29]:
+              - link "User Management" [ref=e30] [cursor=pointer]:
+                - /url: /instance/users
+                - img [ref=e31]
+                - generic [ref=e36]: User Management
+                - img [ref=e37]
+            - listitem [ref=e40]:
+              - link "Global Media" [ref=e41] [cursor=pointer]:
+                - /url: /instance/media
+                - img [ref=e42]
+                - generic [ref=e46]: Global Media
+                - img [ref=e47]
+            - listitem [ref=e50]:
+              - link "Notifications" [ref=e51] [cursor=pointer]:
+                - /url: /instance/notifications
+                - img [ref=e52]
+                - generic [ref=e55]: Notifications
+                - img [ref=e56]
+            - listitem [ref=e59]:
+              - link "Conversations" [ref=e60] [cursor=pointer]:
+                - /url: /instance/conversations
+                - img [ref=e61]
+                - generic [ref=e63]: Conversations
+                - img [ref=e64]
+            - listitem [ref=e67]:
+              - link "Data Export" [ref=e68] [cursor=pointer]:
+                - /url: /instance/data-export
+                - img [ref=e69]
+                - generic [ref=e74]: Data Export
+                - img [ref=e75]
+            - listitem [ref=e78]:
+              - link "Instance Settings" [ref=e79] [cursor=pointer]:
+                - /url: /instance/settings/general
+                - img [ref=e80]
+                - generic [ref=e83]: Instance Settings
+                - img [ref=e84]
+        - generic [ref=e87]:
+          - generic [ref=e88]:
+            - paragraph [ref=e89]: Project
+            - paragraph [ref=e90]: Author content, manage assets, and configure visibility.
+          - list [ref=e91]:
+            - listitem [ref=e92]:
+              - link "Dashboard" [ref=e93] [cursor=pointer]:
+                - /url: /projects/demo
+                - img [ref=e94]
+                - generic [ref=e98]: Dashboard
+                - img [ref=e99]
+            - listitem [ref=e102]:
+              - link "Locations" [ref=e103] [cursor=pointer]:
+                - /url: /projects/demo/locations
+                - img [ref=e104]
+                - generic [ref=e106]: Locations
+                - img [ref=e107]
+            - listitem [ref=e110]:
+              - link "Exhibits" [ref=e111] [cursor=pointer]:
+                - /url: /projects/demo/exhibits
+                - img [ref=e112]
+                - generic [ref=e114]: Exhibits
+                - img [ref=e115]
+            - listitem [ref=e118]:
+              - link "Explorations" [ref=e119] [cursor=pointer]:
+                - /url: /projects/demo/explorations
+                - img [ref=e120]
+                - generic [ref=e122]: Explorations
+                - img [ref=e123]
+            - listitem [ref=e126]:
+              - link "Project Media" [ref=e127] [cursor=pointer]:
+                - /url: /projects/demo/media
+                - img [ref=e128]
+                - generic [ref=e132]: Project Media
+                - img [ref=e133]
+            - listitem [ref=e136]:
+              - link "Notifications" [ref=e137] [cursor=pointer]:
+                - /url: /projects/demo/notifications
+                - img [ref=e138]
+                - generic [ref=e141]: Notifications
+                - img [ref=e142]
+            - listitem [ref=e145]:
+              - link "Conversations" [ref=e146] [cursor=pointer]:
+                - /url: /projects/demo/conversations
+                - img [ref=e147]
+                - generic [ref=e149]: Conversations
+                - img [ref=e150]
+            - listitem [ref=e153]:
+              - link "Project Settings" [ref=e154] [cursor=pointer]:
+                - /url: /projects/demo/settings/general
+                - img [ref=e155]
+                - generic [ref=e158]: Project Settings
+                - img [ref=e159]
+            - listitem [ref=e162]:
+              - link "Team" [ref=e163] [cursor=pointer]:
+                - /url: /projects/demo/settings/team
+                - img [ref=e164]
+                - generic [ref=e169]: Team
+                - img [ref=e170]
+            - listitem [ref=e173]:
+              - link "Front-End Connection Beta" [ref=e174] [cursor=pointer]:
+                - /url: /projects/demo/settings/front-end
+                - img [ref=e175]
+                - generic [ref=e178]: Front-End Connection
+                - generic [ref=e179]: Beta
+                - img [ref=e180]
+    - generic [ref=e183]:
+      - link "Skip to main content" [ref=e184] [cursor=pointer]:
+        - /url: "#main-content"
+      - banner [ref=e185]:
+        - navigation "Breadcrumb" [ref=e187]:
+          - link "Home" [ref=e189] [cursor=pointer]:
+            - /url: /
+        - generic [ref=e190]:
+          - button "Open command palette" [ref=e191] [cursor=pointer]:
+            - img [ref=e192]
+            - generic [ref=e195]: Search
+            - generic [ref=e196]: ⌘K
+          - button "View notifications" [ref=e197] [cursor=pointer]:
+            - img [ref=e198]
+          - button "Alex Robertson instance_admin" [ref=e202] [cursor=pointer]:
+            - img [ref=e204]
+            - generic [ref=e208]:
+              - generic [ref=e209]: Alex Robertson
+              - generic [ref=e210]: instance_admin
+            - img [ref=e211]
+      - main [ref=e213]:
+        - region "Workspace Overview" [ref=e214]:
+          - generic [ref=e215]:
+            - generic [ref=e216]:
+              - heading "Workspace Overview" [level=1] [ref=e217]
+              - paragraph [ref=e218]: Stage 1 scaffolding is in place. Future stages will populate this header with breadcrumbs, context actions, and secondary controls.
+            - generic [ref=e219]:
+              - button "Secondary Action" [ref=e220] [cursor=pointer]
+              - button "Primary Action" [ref=e221] [cursor=pointer]
+        - generic [ref=e222]:
+          - heading "Stage 9 Search Pipeline" [level=2] [ref=e223]
+          - paragraph [ref=e224]: ILIKE-powered project search, query-key scaffolding, and React Query invalidation are wired in. Use the navigation to verify live search, mutation cache sweeps, and the instance/project shells delivered earlier.
+          - generic [ref=e225]:
+            - link "Instance overview" [ref=e226] [cursor=pointer]:
+              - /url: /instance
+            - link "Demo project dashboard" [ref=e227] [cursor=pointer]:
+              - /url: /projects/demo
+            - link "Upload sandbox" [ref=e228] [cursor=pointer]:
+              - /url: /media-demo
+  - generic [ref=e229]:
+    - img [ref=e231]
+    - button "Open Tanstack query devtools" [ref=e279] [cursor=pointer]:
+      - img [ref=e280]
+  - alert [ref=e328]
+  - generic [ref=e331] [cursor=pointer]:
+    - img [ref=e332]
+    - generic [ref=e334]: 1 error
+    - button "Hide Errors" [ref=e335]:
+      - img [ref=e336]
+```
