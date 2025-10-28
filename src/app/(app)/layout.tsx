@@ -3,6 +3,7 @@ import type { PropsWithChildren } from "react";
 import { PageHeaderPlaceholder } from "@/components/layout/page-header";
 import { Sidebar } from "@/components/layout/sidebar";
 import { TopBar } from "@/components/layout/top-bar";
+import { ToastViewport } from "@/components/ui/toast";
 
 export default function AppLayout({ children }: PropsWithChildren) {
   return (
@@ -21,12 +22,7 @@ export default function AppLayout({ children }: PropsWithChildren) {
           {children}
         </main>
       </div>
-      <div
-        id="toast-root"
-        aria-live="polite"
-        aria-atomic="true"
-        className="pointer-events-none fixed inset-x-0 bottom-0 flex flex-col items-center gap-3 px-4 pb-6 sm:items-end sm:px-6"
-      />
+      <ToastViewport />
     </div>
   );
 }
