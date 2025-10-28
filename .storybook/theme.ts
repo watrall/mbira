@@ -1,0 +1,26 @@
+import { create } from "@storybook/theming";
+
+export const archiveSlateTheme = create({
+  base: "light",
+  brandTitle: "mbira Authoring Tool",
+  brandUrl: "https://github.com/watrall/mbira",
+  brandImage: "/assets/mbira-logo.svg",
+  brandTarget: "_self",
+  colorPrimary: "#0094BC",
+  colorSecondary: "#484A50",
+  appBg: "#F9FAFB",
+  appContentBg: "#FFFFFF",
+  appBorderColor: "#DDE3F0",
+  appBorderRadius: 16,
+  fontBase: '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+  fontCode: '"Fira Code", "SFMono-Regular", "SF Mono", Menlo, Consolas, monospace',
+  textColor: "#111827",
+  textInverseColor: "#FFFFFF",
+  barTextColor: "#6B7280",
+  barHoverColor: "#0094BC",
+  barBg: "#FFFFFF",
+  inputBg: "#FFFFFF",
+  inputBorder: "#DDE3F0",
+  inputTextColor: "#111827",
+  inputBorderRadius: 12,
+});

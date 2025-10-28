@@ -47,8 +47,9 @@ describe("Navigation shell", () => {
     toggleButton.focus();
     await user.keyboard("{Enter}");
 
-    const closeButton = await screen.findByRole("button", { name: /close navigation/i });
-    await waitFor(() => expect(closeButton).toBeVisible());
+    await waitFor(() =>
+      expect(screen.getByRole("button", { name: /close navigation/i })).toBeVisible(),
+    );
 
     await user.keyboard("{Escape}");
 
