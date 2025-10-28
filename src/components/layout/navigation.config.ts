@@ -96,6 +96,12 @@ export const navigationSections: NavigationSection[] = [
         match: "/projects/:projectId/settings/general",
       },
       {
+        label: "Team",
+        href: "/projects/demo/settings/team",
+        icon: Users,
+        match: "/projects/:projectId/settings/team",
+      },
+      {
         label: "Front-End Connection",
         href: "/projects/demo/settings/front-end",
         icon: FileText,
