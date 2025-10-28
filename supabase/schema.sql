@@ -573,3 +573,47 @@ comment on table public.notifications is 'User-scoped notifications for alerts a
 comment on table public.ban_logs is 'Audit trail for bans and reversals across instances or projects.';
 comment on table public.instance_memberships is 'Role assignments for users at the instance level.';
 comment on table public.project_memberships is 'Role assignments for users within a project.';
+
+-- Storage buckets (private by default)
+insert into storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
+values
+  (
+    'images',
+    'images',
+    false,
+    null,
+    array['image/jpeg','image/png','image/webp','image/svg+xml']::text[]
+  ),
+  (
+    'audio',
+    'audio',
+    false,
+    null,
+    array['audio/mpeg','audio/wav','audio/ogg','audio/webm','audio/flac']::text[]
+  ),
+  (
+    'video',
+    'video',
+    false,
+    null,
+    array['video/mp4','video/webm','video/ogg','video/x-matroska']::text[]
+  ),
+  (
+    'models',
+    'models',
+    false,
+    null,
+    array['model/gltf+json','model/stl','model/obj','model/vnd.usdz+zip','model/ply']::text[]
+  ),
+  (
+    'docs',
+    'docs',
+    false,
+    null,
+    array['application/pdf']::text[]
+  )
+on conflict (id) do update
+set
+  name = excluded.name,
+  public = excluded.public,
+  allowed_mime_types = excluded.allowed_mime_types;
