@@ -14,8 +14,13 @@ import { navigationSections } from "./navigation.config";
 
 const logoSrc = "/assets/mbira-logo.svg";
 
-const isActive = (pathname: string, item: NavigationItem) =>
-  pathname === item.href || pathname.startsWith(`${item.href}/`);
+const isActive = (pathname: string, item: NavigationItem) => {
+  if (item.match) {
+    const normalized = item.match.replace(/:[^/]+/g, "[^/]+");
+    return new RegExp(`^${normalized}(?:/.*)?$`).test(pathname);
+  }
+  return pathname === item.href || pathname.startsWith(`${item.href}/`);
+};
 
 function NavigationList({ section, pathname }: { section: NavigationSection; pathname: string }) {
   return (

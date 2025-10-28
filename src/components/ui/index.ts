@@ -1,6 +1,7 @@
 export * from "./badge";
 export * from "./button";
 export * from "./command-palette";
+export * from "./card";
 export * from "./data-table";
 export * from "./form-field";
 export * from "./modal";

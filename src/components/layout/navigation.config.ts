@@ -21,6 +21,7 @@ export type NavigationItem = {
   icon: LucideIcon;
   description?: string;
   badge?: string;
+  match?: string;
 };
 
 export type NavigationSection = {
@@ -36,14 +37,14 @@ export const navigationSections: NavigationSection[] = [
     title: "Instance",
     description: "Manage global resources, membership, and moderation.",
     items: [
-      { label: "Home", href: "/", icon: Home },
-      { label: "My Projects", href: "/projects", icon: FolderKanban },
-      { label: "User Management", href: "/users", icon: Users },
-      { label: "Global Media", href: "/media/global", icon: ImageIcon },
-      { label: "Notifications", href: "/notifications", icon: Bell },
-      { label: "Conversations", href: "/conversations", icon: MessageSquare },
-      { label: "Data Export", href: "/data-export", icon: FileBox },
-      { label: "Instance Settings", href: "/settings/instance", icon: Settings },
+      { label: "Overview", href: "/instance", icon: Home },
+      { label: "My Projects", href: "/instance/projects", icon: FolderKanban },
+      { label: "User Management", href: "/instance/users", icon: Users },
+      { label: "Global Media", href: "/instance/media", icon: ImageIcon },
+      { label: "Notifications", href: "/instance/notifications", icon: Bell },
+      { label: "Conversations", href: "/instance/conversations", icon: MessageSquare },
+      { label: "Data Export", href: "/instance/data-export", icon: FileBox },
+      { label: "Instance Settings", href: "/instance/settings/general", icon: Settings },
     ],
   },
   {
@@ -51,29 +52,72 @@ export const navigationSections: NavigationSection[] = [
     title: "Project",
     description: "Author content, manage assets, and configure visibility.",
     items: [
-      { label: "Dashboard", href: "/projects/current", icon: Layers },
-      { label: "Locations", href: "/projects/current/locations", icon: Map },
-      { label: "Exhibits", href: "/projects/current/exhibits", icon: BookOpen },
-      { label: "Explorations", href: "/projects/current/explorations", icon: Command },
-      { label: "Project Media", href: "/projects/current/media", icon: ImageIcon },
-      { label: "Notifications", href: "/projects/current/notifications", icon: Bell },
-      { label: "Conversations", href: "/projects/current/conversations", icon: MessageSquare },
+      { label: "Dashboard", href: "/projects/demo", icon: Layers, match: "/projects/:projectId" },
+      {
+        label: "Locations",
+        href: "/projects/demo/locations",
+        icon: Map,
+        match: "/projects/:projectId/locations",
+      },
+      {
+        label: "Exhibits",
+        href: "/projects/demo/exhibits",
+        icon: BookOpen,
+        match: "/projects/:projectId/exhibits",
+      },
+      {
+        label: "Explorations",
+        href: "/projects/demo/explorations",
+        icon: Command,
+        match: "/projects/:projectId/explorations",
+      },
+      {
+        label: "Project Media",
+        href: "/projects/demo/media",
+        icon: ImageIcon,
+        match: "/projects/:projectId/media",
+      },
+      {
+        label: "Notifications",
+        href: "/projects/demo/notifications",
+        icon: Bell,
+        match: "/projects/:projectId/notifications",
+      },
+      {
+        label: "Conversations",
+        href: "/projects/demo/conversations",
+        icon: MessageSquare,
+        match: "/projects/:projectId/conversations",
+      },
       {
         label: "Project Settings",
-        href: "/projects/current/settings",
+        href: "/projects/demo/settings/general",
         icon: Settings,
+        match: "/projects/:projectId/settings/general",
       },
       {
         label: "Front-End Connection",
-        href: "/projects/current/settings/front-end",
+        href: "/projects/demo/settings/front-end",
         icon: FileText,
         badge: "Beta",
+        match: "/projects/:projectId/settings/front-end",
       },
     ],
   },
 ];
 
+const matchPath = (pattern: string, pathname: string) => {
+  const normalized = pattern.replace(/:[^/]+/g, "[^/]+");
+  const regex = new RegExp(`^${normalized}(?:/.*)?$`);
+  return regex.test(pathname);
+};
+
 export const findNavigationItem = (pathname: string): NavigationItem | undefined =>
   navigationSections
     .flatMap((section) => section.items)
-    .find((item) => pathname === item.href || pathname.startsWith(`${item.href}/`));
+    .find((item) => {
+      if (item.match) {
+        return matchPath(item.match, pathname);
+      }
+      return pathname === item.href || pathname.startsWith(`${item.href}/`);
+    });

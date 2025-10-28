@@ -4,14 +4,12 @@ import { describe, expect, it } from "vitest";
 import Home from "./page";
 
 describe("Home", () => {
-  it("renders the stage 3 guidance copy", () => {
+  it("renders the stage 8 guidance copy", () => {
     render(<Home />);
 
     expect(
-      screen.getByRole("heading", { name: /stage 3 schema ready/i, level: 2 }),
+      screen.getByRole("heading", { name: /stage 8 routing ready/i, level: 2 }),
     ).toBeInTheDocument();
-    expect(
-      screen.getByText(/database schema, rls policies, and supabase types/i),
-    ).toBeInTheDocument();
+    expect(screen.getByText(/instance and project workspaces are scaffolded/i)).toBeInTheDocument();
   });
 });
