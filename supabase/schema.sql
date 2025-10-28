@@ -128,6 +128,66 @@ as $$
     );
 $$;
 
+-- Search helpers
+create or replace function public.search_projects(
+  target_instance uuid,
+  search_term text default ''::text,
+  include_archived boolean default false,
+  limit_count integer default 20,
+  offset_count integer default 0
+)
+returns table (
+  id uuid,
+  instance_id uuid,
+  name text,
+  slug text,
+  summary text,
+  status public.status,
+  visibility public.visibility,
+  updated_at timestamptz
+)
+language plpgsql
+stable
+as $$
+declare
+  normalized_term text := btrim(coalesce(search_term, ''));
+  pattern text;
+begin
+  if normalized_term = '' then
+    pattern := null;
+  else
+    pattern :=
+      '%' || replace(replace(normalized_term, '%', '\%'), '_', '\_') || '%';
+  end if;
+
+  return query
+  select
+    p.id,
+    p.instance_id,
+    p.name,
+    p.slug,
+    p.summary,
+    p.status,
+    p.visibility,
+    p.updated_at
+  from public.projects p
+  where p.instance_id = target_instance
+    and p.deleted_at is null
+    and (include_archived or p.status <> 'archived')
+    and (
+      pattern is null
+      or p.name ilike pattern escape '\'
+      or p.summary ilike pattern escape '\'
+      or p.slug ilike pattern escape '\'
+    )
+  order by
+    case when pattern is null then 0 else 1 end,
+    p.updated_at desc
+  limit limit_count
+  offset offset_count;
+end;
+$$;
+
 -- Tables
 create table if not exists public.instances (
   id uuid primary key default gen_random_uuid(),
@@ -314,6 +374,8 @@ create table if not exists public.project_memberships (
 create index if not exists idx_instances_slug on public.instances using gin (slug gin_trgm_ops);
 create index if not exists idx_projects_instance on public.projects(instance_id);
 create index if not exists idx_projects_slug on public.projects using gin (slug gin_trgm_ops);
+create index if not exists idx_projects_name_trgm on public.projects using gin (name gin_trgm_ops);
+create index if not exists idx_projects_summary_trgm on public.projects using gin (summary gin_trgm_ops);
 create index if not exists idx_locations_project on public.locations(project_id);
 create index if not exists idx_locations_geom on public.locations using gist (geometry);
 create index if not exists idx_exhibits_project on public.exhibits(project_id);

@@ -47,13 +47,13 @@ describe("Navigation shell", () => {
     toggleButton.focus();
     await user.keyboard("{Enter}");
 
-    const dialog = await screen.findByRole("dialog", { name: /navigation/i });
-    expect(dialog).toBeVisible();
+    const closeButton = await screen.findByRole("button", { name: /close navigation/i });
+    await waitFor(() => expect(closeButton).toBeVisible());
 
     await user.keyboard("{Escape}");
 
     await waitFor(() => {
-      expect(screen.queryByRole("dialog", { name: /navigation/i })).not.toBeInTheDocument();
+      expect(screen.queryByRole("button", { name: /close navigation/i })).not.toBeInTheDocument();
     });
   });
 });

@@ -19,6 +19,14 @@ export const queryKeys = {
   conversations: (projectId: string | null) => ["conversations", projectId ?? "all"] as const,
   media: (projectId: string | null) => ["media", projectId ?? "all"] as const,
   notifications: () => ["notifications"] as const,
+  search: {
+    projects: (
+      instanceId: string | null,
+      params: { term: string; includeArchived: boolean; limit: number },
+    ) => ["search", "projects", instanceId ?? "all", params] as const,
+    projectsRoot: (instanceId: string | null) =>
+      ["search", "projects", instanceId ?? "all"] as const,
+  },
   ui: {
     toasts: () => ["ui", "toasts"] as const,
   },

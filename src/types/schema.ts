@@ -733,6 +733,25 @@ export type Database = {
         };
         Returns: boolean;
       };
+      search_projects: {
+        Args: {
+          target_instance: string;
+          search_term?: string;
+          include_archived?: boolean;
+          limit_count?: number;
+          offset_count?: number;
+        };
+        Returns: {
+          id: string;
+          instance_id: string;
+          name: string;
+          slug: string;
+          summary: string | null;
+          status: Database["public"]["Enums"]["status"];
+          visibility: Database["public"]["Enums"]["visibility"];
+          updated_at: string;
+        }[];
+      };
       soft_delete_instances: {
         Args: Record<PropertyKey, never>;
         Returns: unknown;

@@ -1,5 +1,15 @@
 import { defineConfig, devices } from "@playwright/test";
 
+const ensureEnv = (key: string, fallback: string) => {
+  if (!process.env[key]) {
+    process.env[key] = fallback;
+  }
+};
+
+ensureEnv("NEXT_PUBLIC_SUPABASE_URL", "http://127.0.0.1:54321");
+ensureEnv("NEXT_PUBLIC_SUPABASE_ANON_KEY", "test-anon-key");
+ensureEnv("SUPABASE_SERVICE_ROLE_KEY", "test-service-role-key");
+
 const PORT = process.env.PORT ?? "3000";
 const HOST = process.env.HOST ?? "127.0.0.1";
 
