@@ -16,7 +16,8 @@
     "test:e2e:ui": "playwright test --ui",
     "format": "prettier --check .",
     "format:write": "prettier --write .",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "supabase:typegen": "supabase gen types typescript --schema public --project-id \"$SUPABASE_PROJECT_ID\" > src/types/schema.ts"
   },
   "dependencies": {
     "@supabase/auth-helpers-nextjs": "^0.10.0",
