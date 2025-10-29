@@ -21,11 +21,7 @@ export default function InstanceUsersPage() {
         columns={[
           { key: "name", header: "Name" },
           { key: "email", header: "Email" },
-          {
-            key: "role",
-            header: "Role",
-            render: (value) => <Tag tone="accent">{value as string}</Tag>,
-          },
+          { key: "role", header: "Role", render: (value) => <Tag>{value as string}</Tag> },
         ]}
         data={users}
         getRowId={(row) => row.id}

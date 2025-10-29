@@ -1,6 +1,12 @@
+"use client";
+
+import { useState } from "react";
+
 import { Button, FormField, ToggleSwitch } from "@/components/ui";
 
 export default function ProjectSettingsGeneralPage() {
+  const [publicVisibility, setPublicVisibility] = useState(true);
+
   return (
     <form className="space-y-6">
       <div className="space-y-4 rounded-xl border border-borderDivider bg-white p-6 shadow-sm">
@@ -26,7 +32,11 @@ export default function ProjectSettingsGeneralPage() {
           label="Public visibility"
           description="Allow this project to surface on visitor endpoints once published."
         >
-          <ToggleSwitch checked onChange={() => undefined} label="Public visibility" />
+          <ToggleSwitch
+            checked={publicVisibility}
+            onChange={setPublicVisibility}
+            label="Public visibility"
+          />
         </FormField>
       </div>
 

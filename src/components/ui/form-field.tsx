@@ -38,7 +38,12 @@ export function FormField({
           </span>
         ) : null}
       </label>
-      <div aria-describedby={error ? errorId : descriptionId}>{children}</div>
+      <div
+        aria-describedby={error ? errorId : descriptionId}
+        aria-live={typeof error === "string" ? "polite" : undefined}
+      >
+        {children}
+      </div>
       {description && !error ? (
         <p id={descriptionId} className="text-caption text-textSecondary">
           {description}

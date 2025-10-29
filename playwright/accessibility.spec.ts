@@ -1,4 +1,4 @@
-import AxeBuilder from "@axe-core/playwright";
+import { AxeBuilder } from "@axe-core/playwright";
 import { test, expect } from "@playwright/test";
 
 test("home workspace passes axe-core scan", async ({ page }) => {

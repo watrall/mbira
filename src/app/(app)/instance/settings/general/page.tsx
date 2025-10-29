@@ -1,6 +1,12 @@
+"use client";
+
+import { useState } from "react";
+
 import { Button, FormField, ToggleSwitch } from "@/components/ui";
 
 export default function InstanceGeneralSettingsPage() {
+  const [autoArchive, setAutoArchive] = useState(true);
+
   return (
     <form className="space-y-6">
       <header className="space-y-1">
@@ -29,7 +35,7 @@ export default function InstanceGeneralSettingsPage() {
           label="Auto-archive published items"
           description="Automatically archive entries that have been unpublished for more than 180 days."
         >
-          <ToggleSwitch checked onChange={() => undefined} label="Auto-archive" />
+          <ToggleSwitch checked={autoArchive} onChange={setAutoArchive} label="Auto-archive" />
         </FormField>
       </div>
 

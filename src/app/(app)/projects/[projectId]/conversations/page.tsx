@@ -22,7 +22,9 @@ export default function ProjectConversationsPage() {
           {
             key: "status",
             header: "Status",
-            render: (value) => <Tag tone="warning">{value as string}</Tag>,
+            render: (value) => (
+              <Tag tone={value === "Flagged" ? "danger" : "warning"}>{value as string}</Tag>
+            ),
           },
         ]}
         data={conversations}

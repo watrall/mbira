@@ -10,7 +10,7 @@ const toneClasses: Record<NonNullable<TagProps["tone"]>, string> = {
   accent: "bg-accent-surface text-accent-strong",
   success: "bg-systemSuccess/10 text-systemSuccess",
   warning: "bg-systemWarning/10 text-systemWarning",
-  danger: "bg-systemDanger/10 text-systemDanger",
+  danger: "bg-systemDanger-surface text-systemDanger",
 };
 
 export function Tag({ tone = "neutral", className, ...props }: TagProps) {
