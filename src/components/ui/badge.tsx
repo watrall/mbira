@@ -7,8 +7,8 @@ export interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
 
 const styles: Record<NonNullable<BadgeProps["variant"]>, string> = {
   outline: "border border-borderDivider text-caption text-textSecondary",
-  solid: "bg-accent text-caption font-semibold text-white",
-  ghost: "text-caption text-accent",
+  solid: "bg-accent-strong text-caption font-semibold text-white",
+  ghost: "text-caption text-accent-strong",
 };
 
 export function Badge({ variant = "outline", className, ...props }: BadgeProps) {

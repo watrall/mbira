@@ -40,9 +40,9 @@ function NavigationList({ section, pathname }: { section: NavigationSection; pat
               <Link
                 href={item.href}
                 className={[
-                  "group flex items-center gap-3 rounded-md px-3 py-2 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bgSidebar",
+                  "group flex items-center gap-3 rounded-md px-3 py-2 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong focus-visible:ring-offset-2 focus-visible:ring-offset-bgSidebar",
                   active
-                    ? "bg-accent/10 text-accent shadow-sm"
+                    ? "bg-accent-surface text-accent-strong shadow-sm"
                     : "text-textSecondary hover:bg-bgContent hover:text-textPrimary",
                 ].join(" ")}
                 aria-current={active ? "page" : undefined}
@@ -50,12 +50,12 @@ function NavigationList({ section, pathname }: { section: NavigationSection; pat
                 <item.icon className="size-4 shrink-0" aria-hidden="true" />
                 <span className="flex-1 text-body font-medium">{item.label}</span>
                 {item.badge ? (
-                  <span className="rounded-full bg-accent/20 px-2 py-0.5 text-caption font-medium text-accent">
+                  <span className="rounded-full border border-accent-strong/30 bg-white px-2 py-0.5 text-caption font-medium text-accent-strong">
                     {item.badge}
                   </span>
                 ) : null}
                 <ArrowUpRight
-                  className="size-3 text-transparent transition group-hover:text-accent"
+                  className="size-3 text-transparent transition group-hover:text-accent-strong"
                   aria-hidden="true"
                 />
               </Link>
@@ -121,7 +121,7 @@ export function Sidebar() {
                   ref={closeButtonRef}
                   type="button"
                   onClick={() => setSidebarOpen(false)}
-                  className="inline-flex items-center justify-center rounded-md border border-borderDivider bg-white p-2 text-textSecondary shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                  className="inline-flex items-center justify-center rounded-md border border-borderDivider bg-white p-2 text-textSecondary shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong"
                   aria-label="Close navigation"
                 >
                   <X className="size-4" aria-hidden="true" />

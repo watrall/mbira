@@ -72,7 +72,9 @@ export function ImageUploader({
         <div className="flex-1">
           <div
             {...dropzone.getRootProps({
-              className: `flex h-32 cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-borderDivider bg-bgSidebar/80 p-4 text-center transition hover:border-accent ${dropzone.isDragActive ? "border-accent bg-accent/10" : ""}`,
+              className: `flex h-32 cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-borderDivider bg-bgSidebar/80 p-4 text-center transition hover:border-accent-strong ${
+                dropzone.isDragActive ? "border-accent-strong bg-accent-surface" : ""
+              }`,
               "data-testid": "image-dropzone",
             })}
           >
@@ -102,7 +104,7 @@ export function ImageUploader({
           {status === "uploading" ? (
             <div className="mt-3 h-2 w-full overflow-hidden rounded-full bg-borderDivider">
               <div
-                className="h-full rounded-full bg-accent transition-all"
+                className="h-full rounded-full bg-accent-strong transition-all"
                 style={{ width: `${progress}%` }}
               />
             </div>

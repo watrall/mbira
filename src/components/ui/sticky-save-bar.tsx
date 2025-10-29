@@ -40,7 +40,7 @@ export function StickySaveBar({
           {onDiscard ? (
             <button
               type="button"
-              className="rounded-md border border-borderDivider px-3 py-1.5 text-body text-textSecondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              className="rounded-md border border-borderDivider px-3 py-1.5 text-body text-textSecondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong"
               onClick={onDiscard}
             >
               Discard
@@ -48,7 +48,7 @@ export function StickySaveBar({
           ) : null}
           <button
             type="button"
-            className="inline-flex items-center gap-2 rounded-md bg-accent px-4 py-2 text-body font-semibold text-white shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+            className="inline-flex items-center gap-2 rounded-md bg-accent-strong px-4 py-2 text-body font-semibold text-white shadow-sm transition hover:bg-accent-contrast focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong focus-visible:ring-offset-2"
             onClick={onSave}
             disabled={saving}
           >

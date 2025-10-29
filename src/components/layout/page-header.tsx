@@ -14,13 +14,13 @@ export function PageHeaderPlaceholder() {
         <div className="flex flex-col gap-2 sm:flex-row">
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-md border border-borderDivider bg-bgSidebar px-4 py-2 text-sm font-medium text-textPrimary shadow-sm"
+            className="inline-flex items-center justify-center rounded-md border border-borderDivider bg-bgSidebar px-4 py-2 text-sm font-medium text-textPrimary shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong focus-visible:ring-offset-2 focus-visible:ring-offset-bgContent"
           >
             Secondary Action
           </button>
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-md bg-accent px-4 py-2 text-sm font-medium text-white shadow-sm"
+            className="inline-flex items-center justify-center rounded-md bg-accent-strong px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-accent-contrast focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong focus-visible:ring-offset-2 focus-visible:ring-offset-bgContent"
           >
             Primary Action
           </button>

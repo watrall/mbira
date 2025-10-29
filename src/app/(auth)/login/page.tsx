@@ -61,7 +61,7 @@ export default function LoginPage() {
               href="https://unsplash.com/@kavinci_studio?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
               target="_blank"
               rel="noreferrer"
-              className="text-accent underline"
+              className="text-accent-strong underline"
             >
               Kareem Kouka
             </Link>{" "}
@@ -70,7 +70,7 @@ export default function LoginPage() {
               href="https://unsplash.com/photos/brown-concrete-building-under-blue-sky-during-daytime-qpkH-jgE90k?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
               target="_blank"
               rel="noreferrer"
-              className="text-accent underline"
+              className="text-accent-strong underline"
             >
               Unsplash
             </Link>

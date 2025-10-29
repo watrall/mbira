@@ -65,7 +65,9 @@ export function AudioUploader({
 
         <div
           {...dropzone.getRootProps({
-            className: `mt-4 flex cursor-pointer flex-col items-center justify-center rounded-md border-2 border-dashed border-borderDivider bg-white p-4 text-center transition hover:border-accent ${dropzone.isDragActive ? "border-accent bg-accent/10" : ""}`,
+            className: `mt-4 flex cursor-pointer flex-col items-center justify-center rounded-md border-2 border-dashed border-borderDivider bg-white p-4 text-center transition hover:border-accent-strong ${
+              dropzone.isDragActive ? "border-accent-strong bg-accent-surface" : ""
+            }`,
             "data-testid": "audio-dropzone",
           })}
         >
@@ -88,7 +90,7 @@ export function AudioUploader({
         {status === "uploading" ? (
           <div className="mt-3 h-2 w-full overflow-hidden rounded-full bg-borderDivider">
             <div
-              className="h-full rounded-full bg-accent transition-all"
+              className="h-full rounded-full bg-accent-strong transition-all"
               style={{ width: `${progress}%` }}
             />
           </div>

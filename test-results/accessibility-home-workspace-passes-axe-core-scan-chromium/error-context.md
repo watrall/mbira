@@ -157,8 +157,8 @@
               - button "Secondary Action" [ref=e220] [cursor=pointer]
               - button "Primary Action" [ref=e221] [cursor=pointer]
         - generic [ref=e222]:
-          - heading "Stage 9 Search Pipeline" [level=2] [ref=e223]
-          - paragraph [ref=e224]: ILIKE-powered project search, query-key scaffolding, and React Query invalidation are wired in. Use the navigation to verify live search, mutation cache sweeps, and the instance/project shells delivered earlier.
+          - heading "Stage 11 Validation Suite" [level=2] [ref=e223]
+          - paragraph [ref=e224]: Type checking, linting, unit tests, Playwright smoke, Storybook visual checks, and the axe accessibility scan are ready to run. Use these gates to certify each module before shipping.
           - generic [ref=e225]:
             - link "Instance overview" [ref=e226] [cursor=pointer]:
               - /url: /instance

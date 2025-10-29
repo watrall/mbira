@@ -61,7 +61,7 @@ export function Modal({
                   </div>
                   <button
                     type="button"
-                    className="rounded-md border border-borderDivider p-2 text-textSecondary transition hover:text-textPrimary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                    className="rounded-md border border-borderDivider p-2 text-textSecondary transition hover:text-textPrimary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong"
                     onClick={onClose}
                     aria-label="Close modal"
                   >

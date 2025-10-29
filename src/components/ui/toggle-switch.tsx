@@ -19,8 +19,8 @@ export const ToggleSwitch = forwardRef<HTMLButtonElement, ToggleSwitchProps>(
       checked={checked}
       onChange={onChange}
       className={cn(
-        "relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2",
-        checked ? "bg-accent" : "bg-borderDivider",
+        "relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong focus-visible:ring-offset-2",
+        checked ? "bg-accent-strong" : "bg-borderDivider",
         className,
       )}
       {...props}

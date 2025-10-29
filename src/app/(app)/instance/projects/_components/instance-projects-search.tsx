@@ -85,7 +85,7 @@ export function InstanceProjectsSearch() {
                 ? "Search projects by name, summary, or slug"
                 : "Select an instance to search live data"
             }
-            className="h-10 w-full rounded-md border border-borderDivider bg-white pl-9 pr-10 text-body text-textPrimary placeholder:text-textSecondary focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-bgContent disabled:cursor-not-allowed disabled:opacity-60"
+            className="h-10 w-full rounded-md border border-borderDivider bg-white pl-9 pr-10 text-body text-textPrimary placeholder:text-textSecondary focus:border-accent-strong focus:outline-none focus:ring-2 focus:ring-accent-strong focus:ring-offset-2 focus:ring-offset-bgContent disabled:cursor-not-allowed disabled:opacity-60"
             disabled={!activeInstanceId}
             aria-describedby="project-search-helper"
           />
@@ -93,7 +93,7 @@ export function InstanceProjectsSearch() {
             <button
               type="button"
               onClick={handleClear}
-              className="absolute right-2 top-1/2 flex size-7 -translate-y-1/2 items-center justify-center rounded-full border border-borderDivider bg-white text-textSecondary transition hover:text-textPrimary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              className="absolute right-2 top-1/2 flex size-7 -translate-y-1/2 items-center justify-center rounded-full border border-borderDivider bg-white text-textSecondary transition hover:text-textPrimary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong"
               aria-label="Clear project search"
             >
               <X className="size-4" aria-hidden="true" />

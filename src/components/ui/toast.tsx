@@ -50,7 +50,7 @@ export function ToastViewport() {
             </div>
             <button
               type="button"
-              className="rounded-md border border-borderDivider p-1 text-textSecondary hover:text-textPrimary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              className="rounded-md border border-borderDivider p-1 text-textSecondary hover:text-textPrimary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong"
               onClick={() => dismissToast(toast.id)}
               aria-label="Dismiss notification"
             >

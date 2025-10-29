@@ -78,7 +78,7 @@ export function CommandPalette({ items, open: controlledOpen, onOpenChange }: Co
                   }}
                 >
                   <div className="flex items-center gap-3 border-b border-borderDivider px-4 py-3">
-                    <Command className="size-4 text-accent" aria-hidden="true" />
+                    <Command className="size-4 text-accent-strong" aria-hidden="true" />
                     <Combobox.Input
                       autoFocus
                       className="w-full border-none bg-transparent text-body text-textPrimary outline-none placeholder:text-textSecondary"
@@ -101,8 +101,8 @@ export function CommandPalette({ items, open: controlledOpen, onOpenChange }: Co
                             [
                               "flex cursor-pointer items-center justify-between rounded-md px-3 py-2 text-body transition",
                               active
-                                ? "bg-accent/10 text-accent"
-                                : "text-textSecondary hover:bg-accent/10 hover:text-accent",
+                                ? "bg-accent-surface text-accent-strong"
+                                : "text-textSecondary hover:bg-accent-surface hover:text-accent-strong",
                             ].join(" ")
                           }
                         >
@@ -121,7 +121,7 @@ export function CommandPalette({ items, open: controlledOpen, onOpenChange }: Co
                                   className={[
                                     "rounded border px-1.5 py-0.5 text-[10px]",
                                     active
-                                      ? "border-accent text-accent"
+                                      ? "border-accent-strong text-accent-strong"
                                       : "border-borderDivider text-textSecondary",
                                   ].join(" ")}
                                 >

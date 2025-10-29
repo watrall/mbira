@@ -4,10 +4,12 @@ test("renders navigation shell", async ({ page }) => {
   await page.goto("/");
 
   await expect(
-    page.getByRole("heading", { name: /stage 9 search pipeline/i, level: 2 }),
+    page.getByRole("heading", { name: /stage 11 validation suite/i, level: 2 }),
   ).toBeVisible();
   await expect(
-    page.getByText(/ILIKE-powered project search, query-key scaffolding, and React Query/i),
+    page.getByText(
+      /Type checking, linting, unit tests, Playwright smoke, Storybook visual checks/i,
+    ),
   ).toBeVisible();
 
   await page.setViewportSize({ width: 640, height: 900 });

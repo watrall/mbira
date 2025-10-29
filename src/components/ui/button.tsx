@@ -6,17 +6,18 @@ import { forwardRef } from "react";
 import type { ButtonHTMLAttributes } from "react";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center rounded-md text-body font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60",
+  "inline-flex items-center justify-center rounded-md text-body font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60",
   {
     variants: {
       variant: {
         primary:
-          "bg-accent text-white shadow-sm hover:bg-accent/90 focus-visible:ring-offset-bgSidebar",
+          "bg-accent-strong text-white shadow-sm hover:bg-accent-contrast focus-visible:ring-offset-bgSidebar",
         secondary:
           "border border-borderDivider bg-white text-textPrimary shadow-sm hover:bg-bgContent focus-visible:ring-offset-bgSidebar",
-        subtle: "bg-accent/10 text-accent hover:bg-accent/15 focus-visible:ring-offset-bgSidebar",
+        subtle:
+          "bg-accent-surface text-accent-strong hover:bg-accent-surface/80 focus-visible:ring-offset-bgSidebar",
         ghost:
-          "text-textSecondary hover:bg-bgContent hover:text-textPrimary focus-visible:ring-offset-bgSidebar",
+          "text-textSecondary hover:bg-accent-surface focus-visible:ring-offset-bgSidebar focus-visible:ring-offset-bgSidebar",
         danger:
           "bg-systemDanger text-white shadow-sm hover:bg-systemDanger/90 focus-visible:ring-systemDanger focus-visible:ring-offset-bgSidebar",
       },

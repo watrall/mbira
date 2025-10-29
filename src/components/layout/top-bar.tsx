@@ -35,7 +35,7 @@ export function TopBar() {
         <button
           type="button"
           onClick={() => setSidebarOpen(true)}
-          className="inline-flex items-center justify-center rounded-md border border-borderDivider bg-white p-2 text-textSecondary shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent lg:hidden"
+          className="inline-flex items-center justify-center rounded-md border border-borderDivider bg-white p-2 text-textSecondary shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong lg:hidden"
           aria-label="Open navigation"
         >
           <MenuIcon className="size-4" aria-hidden="true" />
@@ -69,7 +69,7 @@ export function TopBar() {
       <div className="flex items-center gap-2 sm:gap-3">
         <button
           type="button"
-          className="hidden items-center gap-2 rounded-md border border-borderDivider bg-white px-3 py-2 text-caption font-medium text-textSecondary shadow-sm transition hover:text-textPrimary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bgSidebar sm:flex"
+          className="hidden items-center gap-2 rounded-md border border-borderDivider bg-white px-3 py-2 text-caption font-medium text-textSecondary shadow-sm transition hover:text-textPrimary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong focus-visible:ring-offset-2 focus-visible:ring-offset-bgSidebar sm:flex"
           aria-label="Open command palette"
         >
           <Search className="size-4" aria-hidden="true" />
@@ -81,15 +81,15 @@ export function TopBar() {
 
         <button
           type="button"
-          className="inline-flex items-center justify-center rounded-full border border-borderDivider bg-white p-2 text-textSecondary shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+          className="inline-flex items-center justify-center rounded-full border border-borderDivider bg-white p-2 text-textSecondary shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong"
           aria-label="View notifications"
         >
           <Bell className="size-4" aria-hidden="true" />
         </button>
 
         <Menu as="div" className="relative">
-          <MenuButton className="inline-flex items-center gap-2 rounded-full border border-borderDivider bg-white px-2.5 py-1.5 text-body font-medium text-textPrimary shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
-            <span className="flex size-8 items-center justify-center rounded-full bg-accent text-white">
+          <MenuButton className="inline-flex items-center gap-2 rounded-full border border-borderDivider bg-white px-2.5 py-1.5 text-body font-medium text-textPrimary shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong">
+            <span className="flex size-8 items-center justify-center rounded-full bg-accent-strong text-white">
               <CircleUser className="size-5" aria-hidden="true" />
             </span>
             <span className="hidden text-left sm:flex sm:flex-col">
@@ -105,7 +105,7 @@ export function TopBar() {
                   href="/profile"
                   className={[
                     "flex items-center gap-2 px-3 py-2 text-body transition",
-                    active ? "bg-accent/10 text-accent" : "text-textSecondary",
+                    active ? "bg-accent-surface text-accent-strong" : "text-textSecondary",
                   ].join(" ")}
                 >
                   Profile
@@ -118,7 +118,7 @@ export function TopBar() {
                   href="/settings/instance"
                   className={[
                     "flex items-center gap-2 px-3 py-2 text-body transition",
-                    active ? "bg-accent/10 text-accent" : "text-textSecondary",
+                    active ? "bg-accent-surface text-accent-strong" : "text-textSecondary",
                   ].join(" ")}
                 >
                   Instance settings

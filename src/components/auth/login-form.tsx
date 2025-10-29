@@ -147,7 +147,7 @@ export function LoginForm() {
               type="email"
               autoComplete="email"
               className={cn(
-                "w-full rounded-lg border border-borderDivider bg-white py-2.5 pl-10 pr-3 text-body text-textPrimary placeholder:text-textSecondary/70 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent",
+                "w-full rounded-lg border border-borderDivider bg-white py-2.5 pl-10 pr-3 text-body text-textPrimary placeholder:text-textSecondary/70 focus:border-accent-strong focus:outline-none focus:ring-2 focus:ring-accent-strong",
                 errors.email && "border-systemDanger focus:ring-systemDanger",
               )}
               {...register("email")}
@@ -161,7 +161,7 @@ export function LoginForm() {
             <label htmlFor="password" className="text-body font-medium text-textPrimary">
               Password
             </label>
-            <Link href="/forgot-password" className="text-caption text-accent underline">
+            <Link href="/forgot-password" className="text-caption text-accent-strong underline">
               Forgot password?
             </Link>
           </div>
@@ -172,7 +172,7 @@ export function LoginForm() {
               type="password"
               autoComplete="current-password"
               className={cn(
-                "w-full rounded-lg border border-borderDivider bg-white py-2.5 pl-10 pr-3 text-body text-textPrimary placeholder:text-textSecondary/70 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent",
+                "w-full rounded-lg border border-borderDivider bg-white py-2.5 pl-10 pr-3 text-body text-textPrimary placeholder:text-textSecondary/70 focus:border-accent-strong focus:outline-none focus:ring-2 focus:ring-accent-strong",
                 errors.password && "border-systemDanger focus:ring-systemDanger",
               )}
               {...register("password")}
@@ -186,7 +186,7 @@ export function LoginForm() {
         <label className="flex items-center gap-2 text-body text-textSecondary">
           <input
             type="checkbox"
-            className="size-4 rounded border-borderDivider text-accent focus:outline-none focus:ring-2 focus:ring-accent"
+            className="size-4 rounded border-borderDivider text-accent-strong focus:outline-none focus:ring-2 focus:ring-accent-strong"
             {...register("rememberMe")}
           />
           Remember this device
@@ -194,7 +194,7 @@ export function LoginForm() {
 
         <button
           type="submit"
-          className="flex w-full items-center justify-center rounded-md bg-accent px-4 py-2.5 text-body font-semibold text-white shadow-sm transition hover:bg-accent/90 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-white disabled:cursor-not-allowed disabled:opacity-70"
+          className="flex w-full items-center justify-center rounded-md bg-accent-strong px-4 py-2.5 text-body font-semibold text-white shadow-sm transition hover:bg-accent-contrast focus:outline-none focus:ring-2 focus:ring-accent-strong focus:ring-offset-2 focus:ring-offset-white disabled:cursor-not-allowed disabled:opacity-70"
           disabled={isSubmitting}
         >
           {isSubmitting ? (
@@ -241,9 +241,9 @@ export function LoginForm() {
               type="button"
               onClick={() => handleOAuth(provider)}
               disabled={oauthLoading !== null}
-              className="flex items-center justify-center gap-3 rounded-md border border-borderDivider bg-white px-4 py-2.5 text-body font-medium text-textPrimary shadow-sm transition hover:bg-bgContent focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-white disabled:cursor-not-allowed disabled:opacity-50"
+              className="flex items-center justify-center gap-3 rounded-md border border-borderDivider bg-white px-4 py-2.5 text-body font-medium text-textPrimary shadow-sm transition hover:bg-bgContent focus:outline-none focus:ring-2 focus:ring-accent-strong focus:ring-offset-2 focus:ring-offset-white disabled:cursor-not-allowed disabled:opacity-50"
             >
-              <Icon className="size-4 text-accent" aria-hidden="true" />
+              <Icon className="size-4 text-accent-strong" aria-hidden="true" />
               {oauthLoading === provider ? "Opening…" : label}
             </button>
           ))}
