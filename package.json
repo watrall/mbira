@@ -25,6 +25,7 @@
     "supabase:typegen": "supabase gen types typescript --schema public --project-id \"$SUPABASE_PROJECT_ID\" > src/types/schema.ts"
   },
   "dependencies": {
+    "@fontsource-variable/inter": "^5.2.8",
     "@headlessui/react": "^2.2.9",
     "@hookform/resolvers": "^5.2.2",
     "@supabase/auth-helpers-nextjs": "^0.10.0",
